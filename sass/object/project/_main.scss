@@ -1,0 +1,145 @@
+@use "../../foundation/common" as c;
+
+.p-main__image{
+    background: url("../img/home_menu.jpg") no-repeat center center ;
+    width: 100%;
+    height: 285px;
+    background-size: cover;
+    @include c.responsive(screen02){
+        background: url("../img/home_menu_tb.jpg") no-repeat center center;
+        background-size: cover;
+    }
+    @include c.responsive(screen03){
+        width: 80vw;
+        background: url("../img/home_menu_pc.jpg") no-repeat center center;
+        background-size: cover;
+        height: 530px;
+    }
+    position: relative;
+    &__text{
+        position: absolute;
+        top: 119px;
+        left: 25px;
+        @include c.fontsize(36) ;
+        color :#FFFFFF ;
+        @include c.responsive(screen02){
+            display: none;
+        }
+        @include c.responsive(screen03){
+            top: 231px;
+            left: 86px;
+            display: block; 
+            @include c.fontsize(40) ;
+            font-weight: 500;
+        }
+    }
+}
+.p-main__contents{
+    @include c.responsive(screen02){
+        display: flex;
+        justify-content: space-between;
+    }
+    @include c.responsive(screen03){
+        width: 80vw;
+
+    }
+    
+}
+
+
+.p-main__contents--1{
+    width: 100%;
+    height: 643px;
+    background: url("../img/take_out_img.jpg") no-repeat center center;
+    background-size: cover;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 11px 15px 0px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include c.responsive(screen02){
+        height: 681px; 
+        margin-bottom:0;
+        margin-right: 41px;
+    }
+    @include c.responsive(screen03){
+        height: 110.4vh;
+        margin-right: 80px;
+    }
+}
+.p-main__contents--2{
+    width: 100%;
+    height: 643px;
+    @include c.responsive(screen02){
+        height: 681px;
+    }
+    @include c.responsive(screen03){
+        height: 110.4vh;
+    }
+    background: url("../img/eat_in_img.jpg") no-repeat center center;
+    background-size: cover;
+    margin-bottom: 0px;
+    position: relative;
+    padding: 11px 15px 0px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.p-main__title{
+    font-family: c.$font-roboto;
+    @include c.fontsize(41) ;
+    color: #EAEAEA;
+    position: relative;
+    @include c.responsive(screen03){
+        @include c.fontsize(60) ;
+    }
+    @include c.responsive(screen04){
+        @include c.fontsize(80) ;
+    }
+
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        background-color: #FFF;
+        width: 33.89px;
+        height: 4px;
+        @include c.responsive(screen03){
+            margin-top: 10px;
+            width: 64px;
+        }
+    }
+} 
+.p-main__title.-eatin{
+    color: #FFFFFF;
+    &::after{
+        background-color: #FFFFFF;
+    }
+}
+
+.p-main__items{
+    background-color: rgba($color: #FFFFFF, $alpha: 0.75) ;
+    padding: 5px 10px 15px 10px;
+    margin-bottom: 15px;
+}
+.p-main__items__title{
+    display: block;
+    margin: 0;
+    padding: 0;
+    @include c.fontsize(22) ;
+    @include c.responsive(screen03) {
+        @include c.fontsize(24) ;
+    }
+    font-weight: 500;
+    color: #3C2A10;
+}
+.p-main__items__description{
+    display: block;
+    line-height: 1.43;
+    margin: 0;
+    padding: 0;
+    @include c.fontsize(16) ;
+    color: #3C2A10;
+
+}

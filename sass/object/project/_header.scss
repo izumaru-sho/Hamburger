@@ -1,0 +1,109 @@
+@use "../../foundation/common" as c;
+
+.p-header__contents{
+    background: #FFF7EF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    @include c.responsive(screen03){
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+}
+.p-header__title{
+    font-family: 'Roboto', sans-serif;
+    color: #707070;
+    font-size: 4.0rem;
+    font-weight: 600;
+    padding-top: 40px;
+    @include c.responsive(screen03){
+        @include c.fontsize(64) ;
+        padding-top: 0px; 
+        padding-left: 65px;
+        margin-bottom: 0;
+    }
+    
+}
+.p-header__search__contents{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    @include c.responsive(screen03){
+        margin: 0 31px 0 0 ;
+    }
+}
+.p-searchbox{
+    display: inline-block;
+    position: relative;
+    
+
+    &::before{
+        content: "";
+        width: 24px;
+        height: 24px;
+        top: 10px;
+        left: 13px;
+        background: url("../img/search_icon.png") no-repeat center center / auto 100%;
+        display: inline-block;
+        position: absolute;
+
+    }
+    & > input{
+        display: inline-block;
+        width: 61.3vw;
+        @include c.responsive(screen02){
+            width: 47.48vw;
+        }
+        @include c.responsive(screen03){
+            width: 20vw;
+        }
+        height: 46px;
+        padding: 10px 10px 10px 40px;
+        margin-right: 12px;
+        border: solid 1px;
+        border-color: #707070;
+        border-radius: 10px;
+
+    }
+}
+.p-search__button{
+    height: 46px;
+    width: 20.8vw;
+    @include c.responsive(screen02){
+        width: 16.30vw;
+    }
+    @include c.responsive(screen02){
+        width: 7.083vw;
+    }
+    border: 1px solid #707070;
+    background:  linear-gradient(#F2EDE9 , #DED8D3);
+    border-radius: 10px;
+    @include c.fontsize(16) ;
+    font-weight: 500;
+    color: #707070;
+
+}
+.p-menu__button{
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    font-family: c.$font-roboto;
+    @include c.fontsize(16) ;
+    @include c.responsive(screen02){
+        @include c.fontsize(34) ;
+    }
+    @include c.responsive(screen03){
+        display: none;
+    }
+    color: #707070;
+    font-weight: 500;
+    
+}
+

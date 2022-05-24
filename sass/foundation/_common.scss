@@ -1,0 +1,76 @@
+/*****************************************************************************
+SET
+*****************************************************************************/
+
+$imgDir: "./common/img/";
+$Lbold: 300;/* light */
+$Hbold: 900;/* Heavy */
+$Mbold: 500;/* medium */
+$bold: 700;/* Bold */
+$wrapWideW:1078px;
+$wrapW:714px;
+$fontG:'M PLUS 1p',MyYuGothicM,YuGothic,-apple-system,BlinkMacSystemFont,"Hiragino kaku Gothic ProN",Meiryo,Verdana,arial,helvetica, sans-serif;
+$font-roboto: 'Roboto',MyYuGothicM,YuGothic,-apple-system,BlinkMacSystemFont,"Hiragino kaku Gothic ProN",Meiryo,Verdana,arial,helvetica,  sans-serif;
+/* Color palette */
+$White: #FFF;
+$OffWhite:#F7F7F7;
+$TextBlack: #121212;
+$DarkGray: #4B4B4B;
+$PaleGray: #C3C3C3;
+$Gray01:#696969;
+$Blue: #2498B3;
+$PaleBlue: #F3FAFB;
+$BlueBlack: #131D34;
+$BlueLight:#D4F1F8;
+$BlueLight02:#E9F8FB;
+$RaiseTechBlue:#2BB8D9;
+$YellowGreen:#A2D729;
+$PaleGreen:#F6FBE9;
+$DullYellowGreen:#9AC33D;
+$Yellow: #F2CE09;
+$Red:#C44A4A;
+$Black:#000000;
+$PaleRed:#FCF6F6;
+
+
+$breakpoints: (
+  'screen01': (min-width: 500px),
+//スマホ
+  'screen02': (min-width: 767px),
+//タブレット
+  'screen03': (min-width: 1078px),
+//PC_small
+  'screen04':(min-width : 1300px)
+) !default ;
+
+
+@mixin fontsize($size){
+font-size: $size + px;
+font-size: ($size / 10) * 1rem;
+}
+@mixin boxshadow{
+box-shadow:0 1px 6px #e0e0e0;
+}
+@mixin listreset{
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+@mixin imgauto{
+  max-width:100%;
+  height:auto;
+}
+
+@mixin responsive($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+  // マップ型で定義されていない値が呼び出された時はエラーを返す
+  @else {
+    @error "指定されたブレークポイントは定義されていません。" + "指定できるブレークポイントは次のとおりです。 -> #{map-keys($breakpoints)}";
+  }
+}
+
+

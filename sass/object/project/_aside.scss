@@ -1,0 +1,155 @@
+@use "../../foundation/common" as c;
+$allheight_sp: 2722.8px;
+$allheight_tb: 1834.8px;
+
+.p-aside__bg{
+    background-color:rgba($color: #000000, $alpha: 0.5) ;
+    width: 100%;
+    height: $allheight_sp;
+    @include c.responsive(screen02){
+        height: $allheight_tb;
+    } 
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 9998;
+
+}
+
+.p-aside{
+    position: fixed;
+    overflow-y: scroll;
+    top: 0;
+    @media screen and (max-width : 1078px){
+        left: 100%;
+    }
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    @include c.responsive(screen03){
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 20%;
+        height: 100%;
+    }
+}
+
+
+.p-aside__contents{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #F2EDE9;
+    width: 87.46%;
+    @include c.responsive(screen02){
+        width: 44%;
+    }
+    @include c.responsive(screen03){
+        width: 100%;
+    }
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.p-aside.open{
+    animation: slide-left-open 0.3s ease forwards ;
+}
+.p-aside.close{
+    animation: slide-left-close 0.3s ease forwards;
+}
+@keyframes slide-left-open{
+    0%{
+        left: 100%;
+    }
+    100%{
+        left: 0;
+    }
+}
+@keyframes slide-left-close{
+    0%{
+        left: 0;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+
+.p-aside__items--1{
+    padding-left: 14.02%;
+    padding-top: 212px;
+}
+.p-aside__items{
+    padding-left: 14.02% ;
+    padding-top: 20px;
+}
+.p-aside__items__title{
+    @include c.fontsize(24) ;
+    color : #707070 ;
+    font-weight: 500
+}
+.p-aside__items__ul{
+    @include c.fontsize(20) ;
+    color: #707070;
+    margin-top: 32px;
+    @include c.responsive(screen03){
+        @media screen and (max-width : 1300px){
+            padding-left: 5px;
+        }
+    }
+    & > li{
+        margin-bottom: 23px;
+        line-height: 1.45;
+        
+    }
+}
+.p-hamburger{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+}
+
+.p-hamburger__button{
+    position: relative;  
+    width: 50px;
+    height: 50px;
+    @include c.responsive(screen03){
+        display: none;
+    }
+    & > span:first-child{
+        position: absolute;
+        background-color: #707070;
+        left: 0px;
+        top: 24px;
+        width: 50px;
+        height: 6px;
+        transform: rotate(45deg);
+    }
+    & > span:nth-child(2){
+        position: absolute;       
+        background-color: #707070;
+        top: 24px;
+        left: 0px;
+        width:  50px;
+        height: 6px;
+        transform: rotate(135deg);
+    }   
+}
+
+
+
+.p-aside__title{
+    display: none;
+    @include c.responsive(screen03){
+        display: block;
+        font-family: c.$font-roboto;
+        @include c.fontsize(34) ;
+        color: #707070;
+        font-weight: 500;
+        padding-left: 14.02%;
+        padding-top: 80px;
+        position: absolute;
+    }
+}

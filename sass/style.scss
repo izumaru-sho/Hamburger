@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+/*--------------reset------------*/
+@use "../sass/foundation/reboot";
+
+/*-------------layout-----------*/
+@use "../sass/layout/base";
+@use "../sass/layout";
+
+/*-------------object-----------*/
+/*------------component---------*/
+@use "./object/component";
+
+/*----------project------------*/
+@use "./object/project";
+
+/*-----------utility------------*/
