@@ -382,12 +382,23 @@ button:focus {
     padding: 40px;
   }
 }
+
 @media screen and (min-width: 1078px) {
-  .l-wrapper {
-    padding: 11.1vh 5.7vw 11.1vh;
+  .l-aside {
+    width: 100%;
+    height: auto;
+  }
+
+  .l-display--pc {
+    display: flex;
+    height: 100%;
+  }
+
+  .l-display__contents--pc {
+    display: flex;
+    flex-direction: column;
   }
 }
-
 .l-header {
   width: 100%;
   height: 217px;
@@ -580,6 +591,7 @@ button:focus {
   .p-main__contents {
     display: flex;
     justify-content: space-between;
+    gap: 40px;
   }
 }
 @media screen and (min-width: 1078px) {
@@ -590,7 +602,6 @@ button:focus {
 
 .p-main__contents--1 {
   width: 100%;
-  height: 643px;
   background: url("../img/take_out_img.jpg") no-repeat center center;
   background-size: cover;
   margin-bottom: 20px;
@@ -600,23 +611,17 @@ button:focus {
   flex-direction: column;
   justify-content: space-between;
 }
+.p-main__contents--1 > div {
+  margin-top: 250px;
+}
 @media screen and (min-width: 767px) {
   .p-main__contents--1 {
-    height: 681px;
     margin-bottom: 0;
-    margin-right: 41px;
-  }
-}
-@media screen and (min-width: 1078px) {
-  .p-main__contents--1 {
-    height: 110.4vh;
-    margin-right: 80px;
   }
 }
 
 .p-main__contents--2 {
   width: 100%;
-  height: 643px;
   background: url("../img/eat_in_img.jpg") no-repeat center center;
   background-size: cover;
   margin-bottom: 0px;
@@ -626,15 +631,8 @@ button:focus {
   flex-direction: column;
   justify-content: space-between;
 }
-@media screen and (min-width: 767px) {
-  .p-main__contents--2 {
-    height: 681px;
-  }
-}
-@media screen and (min-width: 1078px) {
-  .p-main__contents--2 {
-    height: 110.4vh;
-  }
+.p-main__contents--2 > div {
+  margin-top: 250px;
 }
 
 .p-main__title {
@@ -712,38 +710,47 @@ button:focus {
 
 .p-map {
   background-color: #000000;
-  height: 691px;
   width: 100%;
+  position: relative;
+  z-index: 80;
+  min-height: 691px;
 }
 @media screen and (min-width: 767px) {
   .p-map {
-    height: 415px;
+    min-height: 415px;
   }
 }
 @media screen and (min-width: 1078px) {
   .p-map {
-    height: 649px;
-    width: 80%;
+    min-height: 649px;
+    width: 100%;
   }
 }
 
 .p-map__image {
-  background: url("../img/map_img_sp.jpg") no-repeat center center;
-  background-size: cover;
   width: 100%;
   height: 100%;
-  opacity: 0.6;
-  position: relative;
   z-index: 90;
 }
+.p-map__image::before {
+  content: "";
+  background: url("../img/map_img_sp.jpg") no-repeat center center;
+  background-size: cover;
+  opacity: 0.6;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
 @media screen and (min-width: 767px) {
-  .p-map__image {
+  .p-map__image::before {
     background: url("../img/map_img_tb.jpg") no-repeat center center;
     background-size: cover;
   }
 }
 @media screen and (min-width: 1078px) {
-  .p-map__image {
+  .p-map__image::before {
     background: url("../img/map_img_pc.jpg") no-repeat center center;
     background-size: cover;
   }
@@ -751,11 +758,10 @@ button:focus {
 .p-map__image::after {
   content: "";
   position: absolute;
-  display: block;
   top: 0;
   left: 0;
   width: 100%;
-  height: 50%;
+  height: 60%;
   background-color: rgba(0, 0, 0, 0.29);
 }
 @media screen and (min-width: 767px) {
@@ -773,17 +779,10 @@ button:focus {
 .p-map__contents {
   position: relative;
   z-index: 100;
-  margin-top: -691px;
   padding: 32px;
-}
-@media screen and (min-width: 767px) {
-  .p-map__contents {
-    margin-top: -415px;
-  }
 }
 @media screen and (min-width: 1078px) {
   .p-map__contents {
-    margin-top: -649px;
     width: 61.1%;
     height: 100%;
   }
@@ -900,10 +899,8 @@ button:focus {
 }
 @media screen and (min-width: 1078px) {
   .p-aside {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20%;
+    position: static;
+    width: auto;
     height: 100%;
   }
 }
@@ -925,7 +922,9 @@ button:focus {
 }
 @media screen and (min-width: 1078px) {
   .p-aside__contents {
-    width: 100%;
+    position: static;
+    width: auto;
+    height: 100%;
   }
 }
 
@@ -954,13 +953,16 @@ button:focus {
   }
 }
 .p-aside__items--1 {
-  padding-left: 14.02%;
+  min-width: 250px;
   padding-top: 212px;
+  padding-left: 40px;
+  margin-right: 40px;
 }
 
 .p-aside__items {
-  padding-left: 14.02%;
+  padding-left: 40px;
   padding-top: 20px;
+  margin-right: 40px;
 }
 
 .p-aside__items__title {
@@ -975,6 +977,7 @@ button:focus {
   font-size: 2rem;
   color: #707070;
   margin-top: 32px;
+  padding-left: 15px;
 }
 @media screen and (min-width: 1078px) and (max-width: 1300px) {
   .p-aside__items__ul {
@@ -1032,7 +1035,7 @@ button:focus {
     font-size: 3.4rem;
     color: #707070;
     font-weight: 500;
-    padding-left: 14.02%;
+    padding-left: 40px;
     padding-top: 80px;
     position: absolute;
   }

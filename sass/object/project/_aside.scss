@@ -27,12 +27,12 @@ $allheight_tb: 1834.8px;
     width: 100%;
     height: 100%;
     z-index: 9999;
+    
     @include c.responsive(screen03){
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 20%;
+        position: static;
+        width: auto;
         height: 100%;
+
     }
 }
 
@@ -46,12 +46,15 @@ $allheight_tb: 1834.8px;
     @include c.responsive(screen02){
         width: 44%;
     }
-    @include c.responsive(screen03){
-        width: 100%;
-    }
     height: auto;
     display: flex;
     flex-direction: column;
+    @include c.responsive(screen03){
+        position: static;
+        width: auto;
+        height: 100%;
+    }
+
 }
 .p-aside.open{
     animation: slide-left-open 0.3s ease forwards ;
@@ -78,12 +81,15 @@ $allheight_tb: 1834.8px;
 
 
 .p-aside__items--1{
-    padding-left: 14.02%;
+    min-width: 250px;
     padding-top: 212px;
+    padding-left: 40px;
+    margin-right: 40px;
 }
 .p-aside__items{
-    padding-left: 14.02% ;
+    padding-left: 40px ;
     padding-top: 20px;
+    margin-right: 40px
 }
 .p-aside__items__title{
     @include c.fontsize(24) ;
@@ -94,6 +100,7 @@ $allheight_tb: 1834.8px;
     @include c.fontsize(20) ;
     color: #707070;
     margin-top: 32px;
+    padding-left: 15px;
     @include c.responsive(screen03){
         @media screen and (max-width : 1300px){
             padding-left: 5px;
@@ -101,8 +108,7 @@ $allheight_tb: 1834.8px;
     }
     & > li{
         margin-bottom: 23px;
-        line-height: 1.45;
-        
+        line-height: 1.45; 
     }
 }
 .p-hamburger{
@@ -148,7 +154,7 @@ $allheight_tb: 1834.8px;
         @include c.fontsize(34) ;
         color: #707070;
         font-weight: 500;
-        padding-left: 14.02%;
+        padding-left: 40px;
         padding-top: 80px;
         position: absolute;
     }

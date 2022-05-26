@@ -5,41 +5,50 @@ $map-size-pc : 649px ;
 
 .p-map{
     background-color: #000000;
-    height: $map-size-sp;
     width: 100%;
+    position: relative;
+    z-index: 80;
+    min-height: $map-size-sp;
     @include c.responsive(screen02){
-        height: $map-size-tb;
+        min-height: $map-size-tb;
     }
     @include c.responsive(screen03){
-        height: $map-size-pc;
-        width: 80%; 
+        min-height: $map-size-pc;
+        width: 100%; 
     }
     
 }
 .p-map__image{
-    background: url("../img/map_img_sp.jpg") no-repeat center center ;
-    background-size: cover;
     width: 100%;
     height: 100%;
-    opacity: 0.6;
-    position: relative;
     z-index: 90;
-    @include c.responsive(screen02){
-        background: url("../img/map_img_tb.jpg") no-repeat center center;
+    &::before{
+        content: "";
+        background: url("../img/map_img_sp.jpg") no-repeat center center ;
         background-size: cover;
+        opacity: 0.6;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        @include c.responsive(screen02){
+            background: url("../img/map_img_tb.jpg") no-repeat center center;
+            background-size: cover;
+        }
+        @include c.responsive(screen03){
+            background: url("../img/map_img_pc.jpg") no-repeat center center;
+            background-size: cover;
+        }
     }
-    @include c.responsive(screen03){
-        background: url("../img/map_img_pc.jpg") no-repeat center center;
-        background-size: cover;
-    }
+    
     &::after{
         content: "";
         position: absolute;
-        display: block;
         top: 0;
         left: 0;
         width: 100%;
-        height: 50%;
+        height: 60%;
         background-color: rgba($color: #000000, $alpha: 0.29);
         @include c.responsive(screen02){
             height: 100%;
@@ -54,12 +63,7 @@ $map-size-pc : 649px ;
 .p-map__contents{
     position: relative;
     z-index: 100;
-    margin-top: -$map-size-sp;
-    @include c.responsive(screen02){
-        margin-top: -$map-size-tb;
-    }
     @include c.responsive(screen03){
-        margin-top: -$map-size-pc;
         width: 61.1%;
         height: 100%;
     }

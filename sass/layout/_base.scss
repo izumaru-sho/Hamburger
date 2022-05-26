@@ -37,7 +37,21 @@ button:focus{
     @include c.responsive(screen02){
         padding: 40px;
     }
-    @include c.responsive(screen03){
-        padding: 11.1vh 5.7vw 11.1vh;
+}
+@include c.responsive(screen03){
+    .l-aside{
+        width: 100%;
+        height: auto;
+    }
+    .l-display--pc{
+        display: flex;
+        height: 100%;
+    }
+    .l-display__contents--pc{
+        display: flex;
+        flex-direction: column;
+    
     }
 }
+
+
