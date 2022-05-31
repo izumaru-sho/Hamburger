@@ -1,0 +1,49 @@
+@use "../../foundation/common" as c;
+$main-mv-height:283px ; 
+
+.c-main-mv{
+    background-color: #000000;
+    position: relative;
+    width: 100%;
+    &__mv{
+        height: $main-mv-height;
+        object-fit: cover;
+        background-position: 0 center ;
+        opacity: .5;
+        width: 100%;
+        object-fit: cover;
+        @include c.responsive(screen03){
+            display: none ;
+        }
+        &--pc{
+            display: none;
+            @include c.responsive(screen03){
+                height: $main-mv-height;
+                object-fit: cover;
+                background-position: 0 center ;
+                opacity: .5;
+                width: 100%;
+                object-fit: cover;
+                display: block;
+            }
+        }
+        
+    }
+    
+    &__heading{
+        @include c.fontsize(36) ;
+        font-family: c.$font-roboto;
+        color: #FFF;
+        line-height: 1.1;
+        @include c.responsive(screen02){
+            @include c.fontsize(60) ;
+        }
+    }
+    &__text{
+        color: #FFF;
+        @include c.responsive(screen02){
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+    }
+}

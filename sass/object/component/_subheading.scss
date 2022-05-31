@@ -1,0 +1,13 @@
+@use "../../foundation/common" as c;
+
+.c-subheading{
+    &__title{
+        @include c.fontsize(28) ;
+        line-height: 2.5;
+    }
+    &__text{
+        font-weight: 400;
+        color: #3C2A10;
+    }
+}
+

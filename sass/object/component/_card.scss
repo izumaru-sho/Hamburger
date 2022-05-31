@@ -1,0 +1,43 @@
+@use "../../foundation/common" as c;
+
+.c-card{
+    &__img{
+        width: 100%;
+        height: 230px;
+        object-fit: cover ;
+        object-position: 30% center;
+    }
+    &__bg{
+        position: relative;
+        background-color: #3C2B1C ;
+    }
+    &__heading01{
+        @include c.fontsize(20) ;
+        color: #FFF ;
+        font-weight: 400 ;
+        line-height: 2.5
+    }
+    &__heading02{
+        @include c.fontsize(16) ;
+        color: #FFF ;
+        font-weight: 400 ;
+        line-height: 2.0 ;
+    }
+    &__text{
+        @include c.fontsize(16) ;
+        color: #FFF ;
+        width: 85%;
+        font-weight: 200;
+    }
+    &__button{
+        background-color: #FFF;
+        border-radius: 30px;
+        padding: 10px 40px 10px;
+        color: #707070;
+        font-weight: 500;
+        line-height: 1.2;
+
+    }
+
+
+}
