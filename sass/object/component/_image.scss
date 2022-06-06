@@ -1,0 +1,14 @@
+@use "../../foundation/common" as c;
+
+.c-img-w80p{
+    object-fit: cover;
+    width: 80%;
+    height: auto;
+    object-position: center bottom;
+}
+.c-grid-img{
+    width: 100%;
+    height: 205px;
+    object-fit: cover;
+    object-position: center bottom;
+}

@@ -1,0 +1,10 @@
+@use "../../foundation/common" as c;
+
+.c-button{
+    border: 1px solid #707070;
+    background:  linear-gradient(#F2EDE9 , #DED8D3);
+    border-radius: 10px;
+    @include c.fontsize(16) ;
+    font-weight: 500;
+    color: #707070;
+}

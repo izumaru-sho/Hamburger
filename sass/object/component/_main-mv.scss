@@ -2,28 +2,19 @@
 $main-mv-height:283px ; 
 
 .c-main-mv{
-    background-color: #000000;
-    position: relative;
+
     width: 100%;
     &__mv{
-        height: $main-mv-height;
         object-fit: cover;
-        background-position: 0 center ;
-        opacity: .5;
         width: 100%;
-        object-fit: cover;
         @include c.responsive(screen03){
             display: none ;
         }
         &--pc{
             display: none;
             @include c.responsive(screen03){
-                height: $main-mv-height;
                 object-fit: cover;
-                background-position: 0 center ;
-                opacity: .5;
                 width: 100%;
-                object-fit: cover;
                 display: block;
             }
         }

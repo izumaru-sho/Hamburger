@@ -1,0 +1,9 @@
+@use "../../foundation/common" as c;
+
+.c-list-decimal li{
+    list-style-type: decimal;
+}
+.c-list-reset{
+    margin: 0;
+    padding-left: 0;
+}
