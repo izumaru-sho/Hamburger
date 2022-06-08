@@ -1,0 +1,160 @@
+@use "../../foundation/common" as c;
+
+.p-pagenation{
+//--------------responsive sp---------------
+    &-sp{
+        position: relative;
+        top: 40px;
+        padding-top: 20px;
+        @include c.responsive(screen02){
+            display: none;
+        }
+    }
+    &01{
+        display: flex;
+        justify-content: space-between;
+        &-before__text{
+            position: relative;
+            left: 30px;
+            &::before{
+                position: absolute;
+                top: 5px;
+                left: -15px;
+                content: "";
+                border-top: solid #707070 0.8px;
+                border-left: solid #707070 0.8px;
+                width: 15px;
+                height: 15px;
+                transform: rotate(-45deg);
+            }
+            &::after{
+                position: absolute;
+                top: 5px;
+                left: -25px;
+                content: "";
+                border-top: solid #707070 0.8px;
+                border-left: solid #707070 0.8px;
+                width: 15px;
+                height: 15px;
+                transform: rotate(-45deg);
+            }
+        }
+        &-after__text{
+            position: relative;
+            right: 30px;
+            &::before{
+                position: absolute;
+                top: 5px;
+                right: -15px;
+                content: "";
+                border-top: solid #707070 0.8px;
+                border-left: solid #707070 0.8px;
+                width: 15px;
+                height: 15px;
+                transform: rotate(135deg);
+            }
+            &::after{
+                position: absolute;
+                top: 5px;
+                right: -25px;
+                content: "";
+                border-top: solid #707070 0.8px;
+                border-left: solid #707070 0.8px;
+                width: 15px;
+                height: 15px;
+                transform: rotate(135deg);
+            }
+        }
+
+    }
+
+//-----------responsive tab-------------
+
+    &-tab{
+        display: none;
+        @include c.responsive(screen02){
+            display: block;
+            margin-top: 120px;
+
+        }
+    }
+    &02{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &__text{
+            color: #707070;
+            margin-bottom: 0;
+            margin-right: 40px;
+        }
+        &__list{
+            display: flex;
+            padding: 0;
+            margin: 0;
+            & li:first-child{
+                position: relative;
+                & > a {
+                    background-color: #000;
+                    color: #FFF;
+                }
+                &::before{
+                    position: absolute;
+                    top: 5px;
+                    left: -15px;
+                    content: "";
+                    border-top: solid #707070 0.8px;
+                    border-left: solid #707070 0.8px;
+                    width: 15px;
+                    height: 15px;
+                    transform: rotate(-45deg);
+                }
+                &::after{
+                    position: absolute;
+                    top: 5px;
+                    left: -25px;
+                    content: "";
+                    border-top: solid #707070 0.8px;
+                    border-left: solid #707070 0.8px;
+                    width: 15px;
+                    height: 15px;
+                    transform: rotate(-45deg);
+                }
+            }
+            & li:last-child{
+                position: relative;
+                &::before{
+                    position: absolute;
+                    top: 5px;
+                    right: -15px;
+                    content: "";
+                    border-top: solid #707070 0.8px;
+                    border-left: solid #707070 0.8px;
+                    width: 15px;
+                    height: 15px;
+                    transform: rotate(135deg);
+                }
+                &::after{
+                    position: absolute;
+                    top: 5px;
+                    right: -25px;
+                    content: "";
+                    border-top: solid #707070 0.8px;
+                    border-left: solid #707070 0.8px;
+                    width: 15px;
+                    height: 15px;
+                    transform: rotate(135deg);
+                }
+            }
+        }
+        &__item{
+            padding: 5px 10px 5px  ;
+            border: solid 1px #707070;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            margin: 0 5px 0;
+            line-height: 0;
+        
+        }
+    }
+}
